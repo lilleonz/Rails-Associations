@@ -19,7 +19,7 @@ Run:
 
     rails server
 
-#### [Assignment link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/authentication)  
+#### [Assignment link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)  
 
 #### Authors
 
