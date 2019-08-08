@@ -1,0 +1,11 @@
+<div>
+  <% if signed_in? %>
+  <%= link_to "(#{current_user.name}) Sign out", signout_path, method: "delete" %>
+  <% else %>
+    <%= link_to 'Sign in', signin_path %>
+
+    <%= link_to 'Sign Up', signup_path %>
+  <% end %>
+</div>
+<br/>
+<h1><%= @user.name %>'s Events</h1>

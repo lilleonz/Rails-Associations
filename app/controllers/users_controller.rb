@@ -8,13 +8,17 @@ class UsersController < ApplicationController
         if user.save
           flash[:notice] = "SignUp Sucessful"
           sign_in(user)
-          redirect_to root_path
+          redirect_to show_path
         else
           flash.now[:warning] = "Sign Up failed. Try Again"
           render "new"
         end
       end
-    
+
+      def show
+        @user = User.find(current_user.id)
+      end
+
       private
       def user_params
         params.require(:user).permit(:name, :email, :password, :password_confirmation)
