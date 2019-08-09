@@ -8,7 +8,7 @@ class UsersController < ApplicationController
         if user.save
           flash[:notice] = "SignUp Sucessful"
           sign_in(user)
-          redirect_to show_path
+          redirect_to root_path
         else
           flash.now[:warning] = "Sign Up failed. Try Again"
           render "new"
@@ -17,6 +17,11 @@ class UsersController < ApplicationController
 
       def show
         @user = User.find(current_user.id)
+        @user = User.find(params[:id])
+        @events = Event.where(creator: @user)
+        date = Date.current
+        @upcomming_events = @user.created_events.upcomming_events
+        @previous_events = @user.created_events.previous_events
       end
 
       private
