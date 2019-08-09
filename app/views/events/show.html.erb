@@ -1,10 +1,11 @@
+
 <% provide(:title, @event.title) %>
 
 <h1><%= @event.title %></h1>
 
 <p>Created by <%= @event.creator.email %></p>
 
-<% if logged_in? %>
+<% if signed_in? %>
 	<% if @event.attendees.include?(current_user) %>
 		<%= link_to "Leave", unattend_path(event_id: @event.id, user_id: current_user.id), method: :delete, class: "btn-primary btn-lg" %>
 	<% else %>

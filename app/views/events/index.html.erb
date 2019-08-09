@@ -1,19 +1,33 @@
 <% provide(:title, "Events") %>
 
+<div>
+  <% if signed_in? %>
+  <%= link_to "(#{current_user.name}) Sign out", signout_path, method: "delete" %>
+  <% else %>
+    <%= link_to 'Sign in', signin_path %>
+
+    <%= link_to 'Sign Up', signup_path %>
+  <% end %>
+</div>
+
+<% if signed_in? %>
+	 <%= link_to 'Create a new event', newpost_path %>
+<% end %>
+
 <h1>Events</h1>
 
 <hr>
 
 <h2>Upcoming</h2>
 
-<%# <ul class="list-group">
+<ul class="list-group">
 	<%= render @future_events %>
 </ul>
 
-<hr> %>
+<hr>
 
 <h2>Past</h2>
 
-<%# <ul class="list-group">
+<ul class="list-group">
 	<%= render @past_events %>
-</ul> %>
+</ul>

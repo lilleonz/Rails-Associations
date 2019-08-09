@@ -12,11 +12,11 @@ class EventsController < ApplicationController
   end
 
   def new
-    @event = current_user.hosted_events.new
+    @event = Event.new
   end
 
   def create
-    @event = current_user.hosted_events.new(event_params)
+    @event = current_user.created_events.build(event_params)
     if @event.save
       flash[:success] = "Your event has been created."
       redirect_to @event
@@ -49,13 +49,13 @@ class EventsController < ApplicationController
   private
 
   def event_params
-    params.require(:event).permit(:title, :location, :start_time, :description)
+    params.require(:event).permit(:title, :location, :date, :description)
   end
 
   def logged_in_user
-    unless logged_in?
+    unless signed_in?
       flash[:info] = "You must be logged in to do that."
-      redirect_to login_path
+      redirect_to signin_path
     end
   end
 
