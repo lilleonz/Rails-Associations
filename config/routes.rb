@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root "sessions#new"
+  root "events#index"
   resources :user, only: [:new, :create, :show]
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
@@ -8,4 +7,5 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   match '/signin',  to: 'sessions#new', via: 'get'
   delete '/signout', to: 'sessions#destroy'
+  resources :events
 end

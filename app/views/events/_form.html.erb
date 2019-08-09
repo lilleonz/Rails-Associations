@@ -1,0 +1,22 @@
+<%= form_for @event do |f| %>
+	<%= render 'errors' %>
+	<div class="form-group">
+		<h4><%= f.label :title %></h4>
+		<%= f.text_field :title, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<h4><%= f.label :location %></h4>
+		<%= f.text_field :location, class: "form-control" %>
+	</div>
+	<div class="form-group">
+		<h4><%= f.label :start_time %></h4>
+		<%= f.datetime_select :start_time, start_year: Time.current.year, ampm: true %>
+	</div>
+	<div class="form-group">
+		<h4><%= f.label :description %></h4>
+		<%= f.text_area :description, size: "30x10", class: "form-control" %>
+	</div>
+	<%= f.submit yield(:button), class: "btn-primary btn-lg" %>
+<% end %>
+<br>
+<%= link_to "Cancel", root_path %>
