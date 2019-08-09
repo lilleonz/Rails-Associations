@@ -5,7 +5,7 @@ This is the first project from Advanced Forms and Active Record of the Rails mai
 In this project, you will build an application named Private Events and that behaves similar to Eventbrite. The main goal is to put in practice the main concepts of Associations in rails.
 #### Requirements
 
-    Ruby 2.5.3
+    Ruby 2.6.3
 
 #### Installation
 
