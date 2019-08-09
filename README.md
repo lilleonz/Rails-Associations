@@ -1,24 +1,27 @@
-# README
+# Rails Associations
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the first project from Advanced Forms and Active Record of the Rails main curriculum at [Microverse](https://www.microverse.org/) - @microverseinc
 
-Things you may want to cover:
+In this project, you will build an application named Private Events and that behaves similar to Eventbrite. The main goal is to put in practice the main concepts of Associations in rails.
+#### Requirements
 
-* Ruby version
+    Ruby 2.6.3
 
-* System dependencies
+#### Installation
 
-* Configuration
+Download repository to your local machine, then run
+   
+    bundle install
 
-* Database creation
+#### Running
 
-* Database initialization
+Run:
 
-* How to run the test suite
+    rails server
 
-* Services (job queues, cache servers, search engines, etc.)
+#### [Assignment link](https://www.theodinproject.com/courses/ruby-on-rails/lessons/associations)  
 
-* Deployment instructions
+#### Authors
 
-* ...
+* [@lilleonz](https://github.com/lilleonz)
+* [@eapenzacharias](https://github.com/eapenzacharias)
