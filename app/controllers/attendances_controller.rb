@@ -32,7 +32,7 @@ class AttendancesController < ApplicationController
     end
   end
 
-  def correct_user
+  def current_user?
     user = User.find(params[:user_id])
     current_user == user
   end

@@ -59,7 +59,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def correct_user
+  def host?
     @user = Event.find(params[:id]).creator
     unless @user == current_user
       flash[:danger] = "You are not authorized."
