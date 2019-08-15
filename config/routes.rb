@@ -3,12 +3,11 @@ Rails.application.routes.draw do
   get 'attendances/destroy'
   root "events#index"
 
-  resources :users, only: [:new, :create, :show]
+  resources :users, only: :show
 
   get '/signup', to: 'users#new'
   post '/signup', to: 'users#create'
-  get '/show', to: 'users#show'
-
+  
   resources :sessions, only: :create
 
   get '/signin',  to: 'sessions#new'
