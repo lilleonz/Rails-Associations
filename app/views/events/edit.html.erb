@@ -1,8 +1,10 @@
-<% provide(:title, "Edit Event") %>
-<% provide(:button, "Submit Changes") %>
-<%= render 'header'%>
-<h1>Edit <%= @event.title %></h1>
-
-<hr>
-
-<%= render 'form' %>
+<div class="container">
+    <% provide(:title, "Edit Event") %>
+    <% provide(:button, "Submit Changes") %>
+    <%= render 'header'%>
+    <h1>Edit <%= @event.title %></h1>
+    
+    <hr>
+    
+    <%= render 'form' %>
+</div>

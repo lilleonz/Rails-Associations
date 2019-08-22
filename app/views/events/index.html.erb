@@ -1,23 +1,21 @@
-<% provide(:title, "Events") %>
-<%= render 'header'%>
-<% if signed_in? %>
-	 <%= link_to 'Create a new event', newpost_path %>
-<% end %>
+<div class="container">
+	<% provide(:title, "Events") %>
 
-<h1>Events</h1>
+	<h1 class="text-center">Events</h1>
 
-<hr>
+	<hr>
 
-<h2>Upcoming</h2>
+	<h2>Upcoming</h2>
 
-<ul class="list-group">
-	<%= render @future_events %>
-</ul>
+	<ul class="list-group">
+		<%= render @future_events %>
+	</ul>
 
-<hr>
+	<hr>
 
-<h2>Past</h2>
+	<h2>Past</h2>
 
-<ul class="list-group">
-	<%= render @past_events %>
-</ul>
+	<ul class="list-group">
+		<%= render @past_events %>
+	</ul>
+</div>

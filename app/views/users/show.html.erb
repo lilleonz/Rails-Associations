@@ -1,28 +1,26 @@
-<%= render 'header'%>
-<br/>
-<h1><%= @user.name %>'s Events</h1>
-<% if signed_in? %>
-	 <%= link_to 'Create a new event', newpost_path %>
-<% end %>
+<div class="container">
+	<br/>
+	<h1><%= @user.name %>'s Events</h1>
 
-<h1>Events</h1>
+	<h1>Events</h1>
 
-<hr>
+	<hr>
 
-<h2>Upcoming</h2>
+	<h2>Upcoming</h2>
 
-<ul class="list-group">
-<% if @upcomming_events!=nil%>
-	<%= render @upcomming_events %>
-<%end%>
-</ul>
+	<ul class="list-group">
+	<% if @upcomming_events!=nil%>
+		<%= render @upcomming_events %>
+	<%end%>
+	</ul>
 
-<hr>
+	<hr>
 
-<h2>Past</h2>
+	<h2>Past</h2>
 
-<ul class="list-group">
-<% if @previous_events!=nil%>
-	<%= render @previous_events %>
-<%end%>
-</ul>
+	<ul class="list-group">
+	<% if @previous_events!=nil%>
+		<%= render @previous_events %>
+	<%end%>
+	</ul>
+</div>
