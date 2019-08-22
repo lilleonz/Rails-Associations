@@ -9,7 +9,30 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   
-  <body>
+  <body bgcolor="#0099ff">
+    <nav class="navbar navbar-light bg-dark">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">Event Manager</a>
+        </div>
+        <span class="nav">
+          <span class="links"><%= link_to 'Home', root_path %></span>
+          <% if signed_in? %>
+		        <span class="links"><%= link_to 'Create a new event', newpost_path %></span>
+	        <% end %>
+        </span>
+        <span class="nav navbar-nav navbar-right">
+          <% if signed_in? %>
+            <span class="nav-item"><%= link_to "#{current_user.name}'s Events", current_user %></span>
+            <span class="nav-item"><%= link_to "Sign out", signout_path, method: "delete" %></span>
+          <% else %>
+            <span class="nav-item"><%= link_to signin_path do %> <span class="glyphicon glyphicon-user"> Login <% end %></span>
+            <span class="nav-item"><%= link_to signup_path do %> <span class="glyphicon glyphicon-log-in">Sign Up <% end %></span>
+          <% end %>
+        </span>
+      </div>
+    </nav> 
+
     <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "alert alert-#{key}") %>
     <% end %>
