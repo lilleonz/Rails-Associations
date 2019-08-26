@@ -11,7 +11,56 @@
  * It is generally better to create a new file per style scope.
  *
  */
+
 @import "bootstrap";
-
-
-  
+$icon-font-path: "bootstrap/";
+@import "bootstrap";
+body {
+    background-color: #696969;
+    .container {
+        background-color: aliceblue;
+        padding: 50px;
+    }
+    h1 {
+        text-align: center;
+    }
+    .navbar {
+        background-color: #2F4F4F;
+        padding-top: 0;
+        .navbar-nav {
+            padding-top: 15px;
+            .nav-item {
+                font-size: 14px;
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+        }
+        nav {
+            .navbar-brand {
+                h4 {
+                    font-size: 28px;
+                    font-weight: 600;
+                    color: #ffffff;
+                }
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+            }
+        }
+    }
+    .navbar-right {
+        float: right !important;
+        margin-right: 10px;
+    }
+    a:visited {
+        color: #d466ff;
+    }
+    a:hover {
+        color: #a31cfd;
+    }
+    .sign-form {
+        max-width: 480px;
+    }
+}
