@@ -29,7 +29,6 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event = Event.find(params[:id])
     if @event.update_attributes(event_params)
       flash[:success] = 'Your event has been updated.'
       redirect_to @event
@@ -48,6 +47,10 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :location, :date, :description)
+  end
+
+  def event
+    @event = Event.find(params[:id])
   end
 
   def logged_in_user
