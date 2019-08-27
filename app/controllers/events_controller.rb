@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   before_action :logged_in_user, only: [:new, :create, :edit, :update, :destroy]
-  before_action :correct_user, only: [:edit, :update, :destroy]
-  before_action :event, only: [:edit, :show, :destroy]
+  before_action :current_user, only: [:edit, :update, :destroy]
+  before_action :event, only: [:edit, :update, :show, :destroy]
 
   def index
     @future_events = Event.future_events
