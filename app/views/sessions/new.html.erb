@@ -1,0 +1,12 @@
+<div class="container">
+  <h1>Sign In</h1>
+  <div class="sign-form container">
+    <%= form_for(:session, url: sessions_path, :html => {:class => "form-horizontal center"} ) do |f| %>
+      <%= f.label :email, "Email:" , class: "col-md-4 control-label"%>
+      <%= f.email_field :email, placeholder: "user@mail.com", class: "form-control" %><br/>
+      <%= f.label :password, "Password:" , class: "col-md-4 control-label"%>
+      <%= f.password_field :password, class: "form-control"%><br/>
+      <%= f.submit "Sign In" %>
+    <% end %>
+  </div>
+</div>

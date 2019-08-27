@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Sign Up</h1>
+  <div class="sign-form container">
+    <%= form_for(:user, url:{action: 'create'}, :html => {:class => "form-horizontal center"}) do |f| %>
+      <%= f.label :name, "Name:", class: "col-md-4 control-label" %>
+      <%= f.text_field :name, class: "form-control" %><br/>
+      <%= f.label :email, "Email:", class: "col-md-4 control-label" %>
+      <%= f.email_field :email, placeholder: "user@mail.com", class: "form-control" %><br/>
+      <%= f.label :password, "Password:", class: "col-md-4 control-label" %>
+      <%= f.password_field :password, class: "form-control"%><br/>
+      <%= f.label :password_confirmation, "Confirm Password:", class: "col-md-4 control-label" %>
+      <%= f.password_field :password_confirmation, class: "form-control" %><br/>
+      <%= f.submit "Sign Up" %>
+    <% end %>
+  </div>
+</div>
+
