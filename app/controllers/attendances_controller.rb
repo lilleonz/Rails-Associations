@@ -1,6 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :logged_in_user, only: [:create, :destroy]
-  before_action :correct_user, only: :create
+  before_action :current_user, only: :create
   before_action :correct_user_or_event_creator, only: :destroy
 
   def create
@@ -26,7 +26,7 @@ class AttendancesController < ApplicationController
   end
 
   def correct_user_or_event_creator
-    unless correct_user || event_creator
+    unless current_user? || event_creator
       flash[:warning] = "You are not authorized."
       redirect_to root_path
     end

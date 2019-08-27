@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   match '/newpost', to: 'events#new', via: 'get'
 
   resources :attendances, only: [:create, :destroy]
-
+  post '/attend',  to: 'attendances#create'
+  delete '/unattend', to: 'attendances#destroy'
 end
