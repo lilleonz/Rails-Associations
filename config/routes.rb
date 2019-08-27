@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'attendances/create'
   get 'attendances/destroy'
-  root "events#index"
+  root 'events#index'
 
   resources :users, only: [:new, :create, :show]
 
@@ -11,15 +11,15 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
-  match '/signin',  to: 'sessions#new', via: 'get'
+  match '/signin', to: 'sessions#new', via: 'get'
   delete '/signout', to: 'sessions#destroy'
 
   resources :events
 
-  match '/newpost',  to: 'events#new', via: 'get'
+  match '/newpost', to: 'events#new', via: 'get'
 
   resources :attendances, only: [:create, :destroy]
 
-  match '/attend',  to: 'attendances#create', via: 'post'
-  match '/unattend',  to: 'attendances#destroy', via: 'delete'
+  match '/attend', to: 'attendances#create', via: 'post'
+  match '/unattend', to: 'attendances#destroy', via: 'delete'
 end

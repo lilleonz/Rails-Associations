@@ -217,7 +217,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.1.0)
   bootstrap
-  bootstrap-sass (~> 3.4, >= 3.4.1)
+  bootstrap-sass
   byebug
   capybara (>= 2.15)
   chromedriver-helper
@@ -225,6 +225,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  popper_js (~> 1.14.5)
   puma (~> 3.11)
   rails (~> 5.2.3)
   sass-rails
